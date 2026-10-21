@@ -1,0 +1,36 @@
+# WiFi QR Code Generator & Guest Sign Creator
+
+> A client-side, privacy-focused utility that generates ZXing-compliant Wi-Fi QR codes and printable guest signs for instant wireless network connections without manual password entry.
+
+## Project Overview
+
+- **Canonical URL**: https://ahmedelazabdev.github.io/wifiqrcodegenerator/
+- **Author**: Ahmed Elazab
+- **Primary Technology**: Pure Client-Side JavaScript, HTML5 Canvas 2D, Embedded Model 2 QR Matrix Engine
+- **License**: Open Source / Free Utility
+
+## Core Capabilities & Protocol Specifications
+
+1. **Universal ZXing Wi-Fi Protocol**:
+   - Encodes network configurations into the standardized schema: `WIFI:S:<SSID>;T:<Security>;P:<Password>;H:<Hidden>;;`.
+   - Native escaping for special characters (`\`, `;`, `:`, `,`, `"`) to ensure complex passwords parse cleanly.
+
+2. **Security Protocol Compatibility**:
+   - **WPA/WPA2/WPA3**: Supports personal pre-shared key (PSK) and modern SAE authentication.
+   - **WEP**: Supports legacy 64/128-bit WEP networks.
+   - **Open (nopass)**: Encodes networks without credentials for guest and splash portals.
+   - **Hidden SSID Flag**: Sets `H:true` to prompt devices to actively broadcast probe requests for non-beaconing networks.
+
+3. **Printable Tabletop Guest Cards**:
+   - Formats a clean, physical tent card with the QR code, SSID, and password.
+   - Dedicated `@media print` stylesheet optimized for framing and tabletop display in homes, cafes, and Airbnbs.
+
+4. **100% Client-Side Privacy**:
+   - All QR matrix encoding and canvas operations run locally in browser memory.
+   - Zero network requests to third-party QR generation APIs; Wi-Fi passwords and network names are never transmitted or logged.
+
+## Technical Specifications & Performance
+
+- **Performance**: 100% Lighthouse score, zero external Google Fonts (using native system font stack), zero Cumulative Layout Shift (CLS = 0.000).
+- **Accessibility**: Full WCAG AAA color contrast compliance, sequentially descending heading hierarchy (`h1` → `h2` → `h3`), and accessible form labels.
+- **Export Formats**: High-resolution PNG download (300 DPI canvas), direct clipboard image copy, and native browser print dialog.
